@@ -62,8 +62,8 @@ public class BikeFacadeTest {
         try {
             em.getTransaction().begin();
             em.createNamedQuery("Bike.deleteAllRows").executeUpdate();
-            em.persist(new Bike("make1", 160, "Male", 7, 100));
-            em.persist(new Bike("make2", 2, "Female", 12, 150));
+            em.persist(new Bike("Centurion", 160, "Male", 7, 100));
+            em.persist(new Bike("Jupiter", 2, "Female", 12, 150));
 
             em.getTransaction().commit();
         } finally {

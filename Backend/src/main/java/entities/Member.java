@@ -72,10 +72,18 @@ public class Member implements Serializable {
         return acc;
     }
 
-    public void setmAcc(String acc) {
+    public void setAcc(String acc) {
         this.acc = acc;
     }
 
+    public List<Rental> getRentals() {
+        return rentals;
+    }
 
+    public void setRentals(List<Rental> rentals) {
+        this.rentals = rentals;
+    }
+    
+    
 
 }

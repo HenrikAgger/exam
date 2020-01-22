@@ -8,13 +8,12 @@ package facades;
 import dto.BikeDTO;
 import dto.BikesDTO;
 import entities.Bike;
+import entities.Rental;
+import entities.Storage;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import utils.EMF_Creator;
 
 /**
  *
@@ -118,6 +117,36 @@ public class BikeFacade {
             em.close();
         }
     }    
-   
+    
+    public void populate() {
+        EntityManagerFactory emf = EMF_Creator.createEntityManagerFactory(EMF_Creator.DbSelector.DEV, EMF_Creator.Strategy.CREATE);
+        EntityManager em = emf.createEntityManager();
+        
+        
+        
+        Rental rental1 = new Rental("20-02-2020");
+        Rental rental2 = new Rental("21-02-2020");
+
+        Bike bike1 = new Bike("Centurion", 165, "Female", 7, 150);
+        Bike bike2 = new Bike("Centurion", 160, "Male", 12, 100);
+        
+        Storage storage1 = new Storage("Lyngbyvej 123, 2800 Lyngby", 50L);
+        Storage storage2 = new Storage("Holte 111, 2840 Holte", 50L);
+
+        try {
+            em.getTransaction().begin();
+            em.persist(rental1);
+            em.persist(rental2);
+            em.persist(bike1);
+            em.persist(bike2);
+            em.persist(storage1);
+            em.persist(storage2);
+            em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+    }    
+    
+    
 
 }

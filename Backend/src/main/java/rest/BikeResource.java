@@ -45,9 +45,9 @@ public class BikeResource {
         return "{\"msg\":\"Hello World\"}";
     }
     
-    // Create a Bike
-    @Path("create")
+    // Create a Bike   
     @POST
+    @Path("create")
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
     public String createBike(BikeDTO bikeDTO){
@@ -57,6 +57,7 @@ public class BikeResource {
     
     // Edit a Bike
     @PUT
+    @Path("edit")
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
     public BikeDTO editBike(String bike){

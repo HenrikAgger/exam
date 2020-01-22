@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 
 /**
@@ -24,13 +25,15 @@ public class Bike implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
     private String make;
     private double size;
     private String gender;
     private double gears;
     private double dayPrice;
 
+    @ManyToOne
+    private Storage storage;
+    
     public Bike() {
     }
 
@@ -90,4 +93,12 @@ public class Bike implements Serializable {
         this.id = id;
     }
 
+    public Storage getStorage() {
+        return storage;
+    }
+
+    public void setStorage(Storage storage) {
+        this.storage = storage;
+    }
+    
 }

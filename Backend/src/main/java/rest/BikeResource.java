@@ -74,10 +74,7 @@ public class BikeResource {
         return FACADE.deleteBike(id);
     }
     
-    
-    
-    
-    
+
     // Find a Bike
     @Path("id/{id}")
     @GET

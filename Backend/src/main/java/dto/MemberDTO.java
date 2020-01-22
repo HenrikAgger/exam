@@ -28,8 +28,7 @@ public class MemberDTO {
         this.id = m.getId();    
     }
 
-    public MemberDTO(Long id, String name, String sd, String acc) {
-        this.id = id;
+    public MemberDTO(String name, String sd, String acc) {
         this.name = name;
         this.sd = sd;
         this.acc = acc;

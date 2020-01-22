@@ -21,9 +21,9 @@ public class StorageDTO {
     }
 
     public StorageDTO(Storage s) {
-        this.id = id;
-        this.address = address;
-        this.capacity = capacity;
+        this.address = s.getAddress();
+        this.capacity = s.getCapacity();
+        this.id = s.getId();        
     }
 
     public StorageDTO(String address, Long capacity) {
@@ -58,9 +58,9 @@ public class StorageDTO {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.id);
-        hash = 37 * hash + Objects.hashCode(this.address);
-        hash = 37 * hash + Objects.hashCode(this.capacity);
+        hash = 67 * hash + Objects.hashCode(this.id);
+        hash = 67 * hash + Objects.hashCode(this.address);
+        hash = 67 * hash + Objects.hashCode(this.capacity);
         return hash;
     }
 
@@ -87,5 +87,7 @@ public class StorageDTO {
         }
         return true;
     }
+
+
     
 }

@@ -43,4 +43,20 @@ public class Storage implements Serializable {
         this.id = id;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Long getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Long capacity) {
+        this.capacity = capacity;
+    }
+    
 }

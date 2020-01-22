@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 
 /**
@@ -26,13 +27,16 @@ public class Rental implements Serializable {
     private Long id;
     private String date;
 
+    @ManyToOne
+    private Bike bike;
+
     public Rental() {
     }
 
     public Rental(String date) {
         this.date = date;
     }
-    
+
     public Long getId() {
         return id;
     }
@@ -47,6 +51,14 @@ public class Rental implements Serializable {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public Bike getBike() {
+        return bike;
+    }
+
+    public void setBike(Bike bike) {
+        this.bike = bike;
     }
 
 }

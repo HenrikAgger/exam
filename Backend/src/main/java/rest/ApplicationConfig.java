@@ -28,7 +28,6 @@ public class ApplicationConfig extends Application {
         resources.add(rest.BikeResource.class);
         resources.add(rest.DemoResource.class);
         resources.add(rest.MemberResource.class);
-        resources.add(rest.RenameMeResource.class);
         resources.add(rest.RentalResource.class);
         resources.add(rest.StorageResource.class);
         resources.add(rest.SwappiResource.class);

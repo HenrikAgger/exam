@@ -11,6 +11,10 @@ import entities.Bike;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 /**
  *
@@ -103,5 +107,17 @@ public class BikeFacade {
             em.close();
         }
     }
+    
+    // No of Bikes
+    public long getBikeCount() {
+        EntityManager em = emf.createEntityManager();
+        try {
+            long bikeCount = (long) em.createQuery("SELECT COUNT(b) FROM Bike b").getSingleResult();
+            return bikeCount;
+        } finally {
+            em.close();
+        }
+    }    
+   
 
 }

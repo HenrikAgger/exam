@@ -95,7 +95,14 @@ public class BikeResource {
         return FACADE.getAllBikes().getAll();
     } 
     
- 
+    // Count Bikes
+    @Path("count")
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    public String getBikeCount() {
+        long count = FACADE.getBikeCount();
+        return "{\"count\":"+count+"}";  //Done manually so no need for a DTO
+    }      
     
     
     

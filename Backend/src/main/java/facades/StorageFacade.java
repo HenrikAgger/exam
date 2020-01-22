@@ -8,7 +8,6 @@ package facades;
 import dto.StorageDTO;
 import dto.StoragesDTO;
 import entities.Storage;
-import java.awt.Menu;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -79,6 +78,11 @@ public class StorageFacade {
         }
     }
     
-    
+    // Find a Bike on Storage
+    public StorageDTO getStorage(Long storage_id) {
+        EntityManager em = getEntityManager();
+        Storage storageDTO = em.find(Storage.class, storage_id);
+        return new StorageDTO(storageDTO);
+    }    
     
 }

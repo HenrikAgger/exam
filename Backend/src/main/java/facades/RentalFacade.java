@@ -11,6 +11,10 @@ import entities.Rental;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 /**
  *
@@ -106,7 +110,16 @@ public class RentalFacade {
         }
     }
     
-    
+    // No of Rental
+    public long getRentalCount() {
+        EntityManager em = emf.createEntityManager();
+        try {
+            long rentalCount = (long) em.createQuery("SELECT COUNT(r) FROM Rental r").getSingleResult();
+            return rentalCount;
+        } finally {
+            em.close();
+        }
+    }      
     
     
     

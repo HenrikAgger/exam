@@ -5,7 +5,7 @@
  */
 package dto;
 
-import entities.Memb;
+import entities.Member;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,20 +13,20 @@ import java.util.List;
  *
  * @author Henrik
  */
-public class MembsDTO {
-        List<MembDTO> all = new ArrayList<>();
+public class MembersDTO {
+        List<MemberDTO> all = new ArrayList<>();
 
-    public MembsDTO(List<Memb> membEntities) {
-        for (Memb membtestEntity : membEntities) {
-            all.add(new MembDTO(membtestEntity));
+    public MembersDTO(List<Member> memberEntities) {
+        for (Member memberEntity : memberEntities) {
+            all.add(new MemberDTO(memberEntity));
         }
     }
 
-    public List<MembDTO> getAll() {
+    public List<MemberDTO> getAll() {
         return all;
     }
 
-    public void setAll(List<MembDTO> all) {
+    public void setAll(List<MemberDTO> all) {
         this.all = all;
     }
 }

@@ -8,8 +8,8 @@
     <class>entities.Bike</class>
     <class>entities.Storage</class>
     <class>entities.CustomerNo</class>
-    <class>entities.Memb</class>
     <class>dto.Membs</class>
+    <class>entities.Member</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <!-- DO NOT remove the line below. It's not set by the  entityUtils.EMF_Creator -->

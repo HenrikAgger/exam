@@ -5,37 +5,36 @@
  */
 package dto;
 
-import entities.Memb;
+import entities.Member;
 import java.util.Objects;
 /**
  *
  * @author Henrik
  */
-public class MembDTO {
+public class MemberDTO {
 
     private Long id;
-    private String mName;
+    private String name;
     private String sd;
     private String acc;
 
-    public MembDTO() {
+    public MemberDTO() {
     }
 
-    public MembDTO(Memb m) {
-        this.mName = m.getmName();
+    public MemberDTO(Member m) {
+        this.name = m.getName();
         this.sd = m.getSd();
         this.acc = m.getAcc();
-        this.id = m.getId();        
+        this.id = m.getId();    
     }
 
-    public MembDTO(String mName, String sd, String acc) {
-        this.mName = mName;
+    public MemberDTO(Long id, String name, String sd, String acc) {
+        this.id = id;
+        this.name = name;
         this.sd = sd;
         this.acc = acc;
     }
-    
-    
-    
+
     public Long getId() {
         return id;
     }
@@ -44,12 +43,12 @@ public class MembDTO {
         this.id = id;
     }
 
-    public String getmName() {
-        return mName;
+    public String getName() {
+        return name;
     }
 
-    public void setmName(String mName) {
-        this.mName = mName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getSd() {
@@ -70,9 +69,9 @@ public class MembDTO {
 
     @Override
     public int hashCode() {
-        int hash = 5;
+        int hash = 3;
         hash = 29 * hash + Objects.hashCode(this.id);
-        hash = 29 * hash + Objects.hashCode(this.mName);
+        hash = 29 * hash + Objects.hashCode(this.name);
         hash = 29 * hash + Objects.hashCode(this.sd);
         hash = 29 * hash + Objects.hashCode(this.acc);
         return hash;
@@ -89,8 +88,8 @@ public class MembDTO {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final MembDTO other = (MembDTO) obj;
-        if (!Objects.equals(this.mName, other.mName)) {
+        final MemberDTO other = (MemberDTO) obj;
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         if (!Objects.equals(this.sd, other.sd)) {
@@ -104,10 +103,5 @@ public class MembDTO {
         }
         return true;
     }
-
-
-    
-    
-    
-
+ 
 }

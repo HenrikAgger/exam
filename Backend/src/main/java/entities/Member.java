@@ -18,23 +18,23 @@ import javax.persistence.NamedQuery;
  */
 
 @Entity
-@NamedQuery(name = "Memb.deleteAllRows", query = "DELETE from Memb")
-public class Memb implements Serializable {
+@NamedQuery(name = "Member.deleteAllRows", query = "DELETE from Member")
+public class Member implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private String mName;
+    private String name;
     private String sd;
     private String acc;
 
-    public Memb() {
+    public Member() {
     }
 
-    public Memb(String mName, String sd, String acc) {
-        this.mName = mName;
+    public Member(String name, String sd, String acc) {
+        this.name = name;
         this.sd = sd;
         this.acc = acc;
     }
@@ -48,12 +48,12 @@ public class Memb implements Serializable {
         this.id = id;
     }
 
-    public String getmName() {
-        return mName;
+    public String getName() {
+        return name;
     }
 
-    public void setmName(String mName) {
-        this.mName = mName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getSd() {

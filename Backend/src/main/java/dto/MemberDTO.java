@@ -68,11 +68,11 @@ public class MemberDTO {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 29 * hash + Objects.hashCode(this.id);
-        hash = 29 * hash + Objects.hashCode(this.name);
-        hash = 29 * hash + Objects.hashCode(this.sd);
-        hash = 29 * hash + Objects.hashCode(this.acc);
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.id);
+        hash = 97 * hash + Objects.hashCode(this.name);
+        hash = 97 * hash + Objects.hashCode(this.sd);
+        hash = 97 * hash + Objects.hashCode(this.acc);
         return hash;
     }
 
